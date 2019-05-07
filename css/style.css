@@ -1,0 +1,145 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    margin: 1em 2em;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.title {
+    background: #eee;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.title .text {
+    font-size: 2em;
+    flex-grow: 1;
+}
+.title .discord {
+    cursor: pointer;
+    background-color: #337ab7;
+    padding: 1em 2em;
+    border-radius: 0.3em;
+    color: inherit;
+    text-decoration: none;
+}
+.container.stats {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.stats .stat {
+    background: #eee;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    margin: 1em;
+    align-items: center;
+}
+.stats .stat .name {
+    padding: 1em;
+    flex-grow: 1;
+}
+.stats .stat .lamps {
+    margin: 1em;
+    background-color: #888;
+}
+.stats .stat .lamps .lamp {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 1em;
+    margin: 0.5em;
+    background-color: black;
+}
+.stats .stat .lamps .lamp.active.lamp-2 {
+    background-color: red;
+}
+.stats .stat .lamps .lamp.active.lamp-1 {
+    background-color: yellow;
+}
+.stats .stat .lamps .lamp.active.lamp-0 {
+    background-color: green;
+}
+.container.vert-diff {
+    display: flex;
+}
+.info-section,
+.player-section {
+    font-size: 0.8em;
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+}
+.tab {
+    display: block;
+    padding: 0.2em;
+    cursor: pointer;
+    margin: 0 0.1em;
+    background-color: #eee;
+}
+.tab.active,
+.tab:hover {
+    background-color: #888;
+}
+.info-section .content {
+    border: 0.1em solid #eee;
+    width: 100%;
+}
+.info-section .content.grid {
+    border-spacing: 0;
+}
+.info-section .content.grid td,
+.info-section .content.grid th {
+    border: 0.05em solid #eee;
+    text-align: left;
+    width: 50%;
+}
+.info-section .content.error .message {
+    font-size: 0.9em;
+}
+.info-section .content.error .trace {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.6em;
+}
+.player-section {
+    border: 0.1em solid #eee;
+    border-spacing: 0;
+    margin-left: 1em;
+}
+.player-section th {
+    background-color: #eee;
+    text-align: left;
+    border: 0.05em solid #eee;
+}
+.player-section td {
+    border: 0.05em solid #eee;
+    text-align: left;
+    padding: 0.2em;
+}
+.player-section td:first-child {
+    width: 1em;
+}
+.player-section td div {
+    display: inline;
+}
+.player-section td img {
+    width: 1em;
+}
+.player-section .servers {
+    font-size: 0.8em;
+    padding-left: 1em;
+}
+.player-section .server {
+    background-color: #eee;
+    padding: 0.1em 0.2em;
+    border-radius: 0.5em;
+}
