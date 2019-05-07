@@ -66,7 +66,11 @@ decodeServerData = succeed ServerData
 
 decodeServerInfo : Decoder ServerInfo
 decodeServerInfo = succeed ServerInfo
-    |> required "HostName" string 
+    |> required "HostName" 
+        ( map 
+            (String.dropLeft 2)
+            string 
+        )
     |> required "GameType" string 
     |> required "GameName" string 
     |> required "Version" string 
