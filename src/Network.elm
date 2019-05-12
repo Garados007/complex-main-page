@@ -25,7 +25,7 @@ type Return
 
 send : Posix -> Cmd NetworkMsg
 send time = HttpBuilder.get 
-        ( "http://complex.mabron.de/mc/data/server.json?time=" 
+        ( "/mc/data/server.json?time=" 
             ++ (String.fromInt <| Time.posixToMillis time)
         )
     |> withTimeout 10000
