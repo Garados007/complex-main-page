@@ -25,9 +25,9 @@ type Msg
 
 -- main = text <| Debug.toString testResult
 
-main = Browser.element
+main = Browser.document
     { init = \() -> init
-    , view = view
+    , view = Browser.Document "2 Complex" << List.singleton << view
     , update = update
     , subscriptions = subscriptions
     }
@@ -57,9 +57,9 @@ view model = div []
                     diff st ct = (Time.posixToMillis ct) - (Time.posixToMillis st)
                     cat : Int -> Int
                     cat timeDiff = 
-                        if timeDiff < 60000
+                        if timeDiff < 30000
                         then 0
-                        else if timeDiff < 300000
+                        else if timeDiff < 90000
                         then 1
                         else 2
                     (name, stat) = case server of 
@@ -127,10 +127,10 @@ viewInfoSection model = div [ class "info-section" ]
                         ]
                     )
                 <|  [ ("Hostname: ", data.info.hostName)
-                    , ("Game Type: ", data.info.gameType)
-                    , ("Game Name: ", data.info.gameName)
+                    -- , ("Game Type: ", data.info.gameType)
+                    -- , ("Game Name: ", data.info.gameName)
                     , ("Version: ", data.info.version)
-                    , ("Map: ", data.info.map)
+                    -- , ("Map: ", data.info.map)
                     , ( "Players: "
                         , (String.fromInt data.info.players)
                             ++ " / "
@@ -268,4 +268,4 @@ update msg model = case msg of
         )
 
 subscriptions : Model -> Sub Msg 
-subscriptions model = Time.every 15000 NewTime
+subscriptions model = Time.every 10000 NewTime
