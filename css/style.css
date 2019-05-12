@@ -6,6 +6,7 @@ html, body {
     margin: 1em 2em;
     font-size: 2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: font-size 0.5s;
 }
 .title {
     background: #eee;
@@ -142,4 +143,34 @@ html, body {
     background-color: #eee;
     padding: 0.1em 0.2em;
     border-radius: 0.5em;
+}
+@media (max-width: 1200px) {
+    .container {
+        font-size: 1.75em;
+    }
+}
+@media (max-width: 1000px) {
+    .container {
+        font-size: 1.5em;
+    }
+    .container.vert-diff {
+        flex-direction: column-reverse;
+    }
+    .info-section,
+    .player-section {
+        width: 100%;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media (max-width: 800px) {
+    .container {
+        font-size: 1.25em;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        font-size: 1em;
+    }
 }
